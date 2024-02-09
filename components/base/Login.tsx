@@ -20,11 +20,9 @@ const Login = () => {
   const [open, setOpen] = useState<boolean>(false);
 
   return (
-    <div>
+    <div onClick={() => setOpen(!open)}>
       <AlertDialog open={open}>
-        <AlertDialogTrigger onClick={() => setOpen(!open)}>
-          Login
-        </AlertDialogTrigger>
+        <AlertDialogTrigger>Login</AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogTitle>
             <div className="text-2xl flex items-center justify-between ">
