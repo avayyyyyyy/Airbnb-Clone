@@ -17,10 +17,10 @@ const LoginButton = () => {
       </PopoverTrigger>
       <PopoverContent className="mr-8 w-fit">
         <ul className="flex flex-col gap-2 text-sm">
-          <Link className="hover:bg-zinc-200 px-2 py-1 rounded-md" href={""}>
+          <Link className="hover:bg-zinc-200 p-2 rounded-md" href={""}>
             <Login />
           </Link>
-          <Link className="hover:bg-zinc-200 px-2 py-1 rounded-md" href={""}>
+          <Link className="hover:bg-zinc-200 p-2 rounded-md" href={""}>
             SignUp
           </Link>
         </ul>

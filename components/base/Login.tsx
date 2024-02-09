@@ -1,28 +1,37 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
+import { X } from "lucide-react";
 
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Label } from "../ui/label";
 
 const Login = () => {
+  const [open, setOpen] = useState<boolean>(false);
+
   return (
     <div>
-      <AlertDialog>
-        <AlertDialogTrigger>Login</AlertDialogTrigger>
+      <AlertDialog open={open}>
+        <AlertDialogTrigger onClick={() => setOpen(!open)}>
+          Login
+        </AlertDialogTrigger>
         <AlertDialogContent>
-          <AlertDialogTitle>Login</AlertDialogTitle>
+          <AlertDialogTitle>
+            <div className="text-2xl flex items-center justify-between ">
+              Login
+              <X className="cursor-pointer" onClick={() => setOpen(!open)} />
+            </div>
+          </AlertDialogTitle>
           <AlertDialogDescription>
             <h1 className="text-sm">Welcome To Airbnb</h1>
           </AlertDialogDescription>
@@ -31,6 +40,7 @@ const Login = () => {
             type="email"
             name="email"
             id="email"
+            autoComplete="none"
             className="outline p-2 rounded-lg outline-zinc-200"
           />
           <Label htmlFor="email">Password:</Label>
@@ -45,25 +55,24 @@ const Login = () => {
           <div className="flex flex-col text-center w-full ">
             <div className="flex flex-col gap-2">
               <Button variant={"outline"} className="p-2 border rounded-lg">
-                <div>
-                  {" "}
-                  <img
-                    className="w-5"
-                    src="public/images/google.png"
-                    alt=""
-                  />{" "}
-                  <h1>Continue with Google</h1>
-                </div>
+                <Image
+                  className="w-5 mr-2"
+                  src={"/images/google.png"}
+                  alt=""
+                  width={2}
+                  height={2}
+                />{" "}
+                Continue with Google
               </Button>
-              <Button
-                variant={"outline"}
-                className="p-2 border rounded-lg"
-              >
-                <div>
-                  {" "}
-                  <img src="public/images/github.png" alt="" />{" "}
-                  <h1>Continue with GitHub</h1>
-                </div>
+              <Button variant={"outline"} className="p-2 border rounded-lg">
+                <Image
+                  className="w-5 mr-2"
+                  src={"/images/github.png"}
+                  alt=""
+                  width={2}
+                  height={2}
+                />{" "}
+                Continue with GitHub
               </Button>
             </div>
           </div>
