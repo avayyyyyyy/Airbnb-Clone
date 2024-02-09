@@ -1,5 +1,5 @@
 import React from "react";
-import { User, Menu } from "lucide-react";
+import Link from "next/link";
 
 import {
   Popover,
@@ -7,19 +7,23 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import ProfileButton from "./ProfileButton";
+import Login from "./Login";
 
 const LoginButton = () => {
   return (
     <Popover>
       <PopoverTrigger>
         <ProfileButton />
-        {/* <Menu /> */}
       </PopoverTrigger>
-      <PopoverContent className="mr-8">
-        <h1>DARK</h1>
-        <h1>DARK</h1>
-        <h1>DARK</h1>
-        <h1>DARK</h1>
+      <PopoverContent className="mr-8 w-fit">
+        <ul className="flex flex-col gap-2 text-sm">
+          <Link className="hover:bg-zinc-200 px-2 py-1 rounded-md" href={""}>
+            <Login />
+          </Link>
+          <Link className="hover:bg-zinc-200 px-2 py-1 rounded-md" href={""}>
+            SignUp
+          </Link>
+        </ul>
       </PopoverContent>
     </Popover>
   );
