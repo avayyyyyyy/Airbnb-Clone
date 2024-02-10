@@ -8,7 +8,6 @@ import { X } from "lucide-react";
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogTitle,
@@ -16,19 +15,18 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "../ui/label";
+import { AlertDialogCancel } from "@radix-ui/react-alert-dialog";
 
-const Login = () => {
-  // console.log(open);
-
+const SignUp = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <div>Login</div>
+        <div>SignUp</div>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogTitle>
           <div className="text-2xl text-left flex items-center justify-between ">
-            Login
+            SignUp
             <AlertDialogCancel>
               <X className="cursor-pointer" />
             </AlertDialogCancel>
@@ -37,6 +35,14 @@ const Login = () => {
         <AlertDialogDescription>
           <h1 className="text-sm">Welcome To Airbnb</h1>
         </AlertDialogDescription>
+        <Label htmlFor="name">Name:</Label>
+        <Input
+          type="name"
+          name="name"
+          id="name"
+          autoComplete="none"
+          className="outline p-2 rounded-lg outline-zinc-200"
+        />
         <Label htmlFor="email">Email:</Label>
         <Input
           type="email"
@@ -46,6 +52,13 @@ const Login = () => {
           className="outline p-2 rounded-lg outline-zinc-200"
         />
         <Label htmlFor="email">Password:</Label>
+        <Input
+          type="Password"
+          name="Password"
+          id="Password"
+          className="outline p-2 rounded-lg outline-zinc-200"
+        />
+        <Label htmlFor="email">Confirm Password:</Label>
         <Input
           type="Password"
           name="Password"
@@ -83,4 +96,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
