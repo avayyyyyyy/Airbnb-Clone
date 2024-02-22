@@ -12,9 +12,11 @@ import ProfileButton from "./ProfileButton";
 import Login from "./Login";
 import { Button } from "../ui/button";
 import SignUp from "./SIgnUp";
+import { signOut, useSession } from "next-auth/react";
 
 const LoginButton = () => {
   const [open, setOpen] = useState<boolean>(false);
+  const session = useSession();
 
   return (
     <Popover>
@@ -23,12 +25,20 @@ const LoginButton = () => {
       </PopoverTrigger>
       <PopoverContent className="mr-8 w-fit">
         <ul className="flex flex-col gap-2 text-sm">
-          <Button variant={"ghost"} className="rounded-md">
-            <Login />
-          </Button>
-          <Button variant={"ghost"} className="rounded-md">
-            <SignUp />
-          </Button>
+          {session.status === "unauthenticated" ? (
+            <>
+              <Button variant={"ghost"} className="rounded-md">
+                <Login />
+              </Button>
+              <Button variant={"ghost"} className="rounded-md">
+                <SignUp />
+              </Button>
+            </>
+          ) : (
+            <Button variant={"destructive"} onClick={() => signOut()}>
+              Logout
+            </Button>
+          )}
         </ul>
       </PopoverContent>
     </Popover>
