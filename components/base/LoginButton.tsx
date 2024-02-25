@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-// import Link from "next/link";
-
 import {
   Popover,
   PopoverContent,
@@ -13,6 +11,7 @@ import Login from "./Login";
 import { Button } from "../ui/button";
 import SignUp from "./SIgnUp";
 import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 const LoginButton = () => {
   const [open, setOpen] = useState<boolean>(false);
@@ -24,22 +23,48 @@ const LoginButton = () => {
         <ProfileButton />
       </PopoverTrigger>
       <PopoverContent className="mr-8 w-fit">
-        <ul className="flex flex-col gap-2 text-sm">
+        <div className="flex flex-col gap-2 text-sm">
           {session.status === "unauthenticated" ? (
             <>
-              <Button variant={"ghost"} className="rounded-md">
+              <Button variant={"outline"} className="rounded-md">
                 <Login />
               </Button>
-              <Button variant={"ghost"} className="rounded-md">
+              <Button variant={"outline"} className="rounded-md">
                 <SignUp />
               </Button>
             </>
           ) : (
-            <Button variant={"destructive"} onClick={() => signOut()}>
-              Logout
-            </Button>
+            <div className="flex flex-col gap-y-2">
+              <Link
+                className="p-2 md:hidden block font-normal bg-secondary-foreground/5 rounded-md"
+                href={"/listing"}
+              >
+                Add your home
+              </Link>
+              <Link
+                className="p-2 font-normal bg-secondary-foreground/5 rounded-md"
+                href={"/listing"}
+              >
+                My Listing
+              </Link>
+              <Link
+                className="p-2 font-normal bg-secondary-foreground/5 rounded-md"
+                href={"/favorite"}
+              >
+                My Favorite
+              </Link>
+              <Link
+                className="p-2 font-normal bg-secondary-foreground/5 rounded-md"
+                href={"/reservation"}
+              >
+                My Reservations
+              </Link>
+              <Button variant={"destructive"} onClick={() => signOut()}>
+                Logout
+              </Button>
+            </div>
           )}
-        </ul>
+        </div>
       </PopoverContent>
     </Popover>
   );

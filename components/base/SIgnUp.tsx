@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Label } from "../ui/label";
-import { redirect } from "next/navigation";
+
 import { signIn } from "next-auth/react";
 
 const SignUp = () => {
@@ -24,8 +24,8 @@ const SignUp = () => {
     password: "",
     confirmPassword: "",
   });
-
   const [error, setError] = useState("");
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [userCreated, setUserCreated] = useState(false);
 
@@ -44,7 +44,6 @@ const SignUp = () => {
           password: body.confirmPassword,
         });
 
-        // Check if the registration was successful
         if (res.status === 200) {
           setUserCreated(true);
           setError("");
@@ -75,7 +74,7 @@ const SignUp = () => {
   }
 
   return (
-    <AlertDialog>
+    <AlertDialog open={open} onOpenChange={() => setOpen(!open)}>
       <AlertDialogTrigger asChild>
         <div>SignUp</div>
       </AlertDialogTrigger>
@@ -175,6 +174,15 @@ const SignUp = () => {
               />{" "}
               Continue with GitHub
             </Button>
+          </div>
+          <div className="text-zinc-700 mt-2 text-xs">
+            Alredy a Customer?{" "}
+            <span
+              onClick={() => console.log("hello")}
+              className="hover:cursor-pointer hover:underline"
+            >
+              Login
+            </span>
           </div>
         </div>
       </AlertDialogContent>

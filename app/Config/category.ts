@@ -1,75 +1,114 @@
-type CategoriesType =  {
-    name: String,
-    icon: String
+interface iAppProps {
+  name: string;
+  title: string;
+  imageUrl: string;
+  description: string;
+  id: number;
 }
 
-export const categories:Array<CategoriesType> = [
+export const categories: iAppProps[] = [
   {
-    name: "Farms",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXBhbG10cmVlIj48cGF0aCBkPSJNMTMgOGMwLTIuNzYtMi40Ni01LTUuNS01UzIgNS4yNCAyIDhoMmwxLTEgMSAxaDQiLz48cGF0aCBkPSJNMTMgNy4xNEE1LjgyIDUuODIgMCAwIDEgMTYuNSA2YzMuMDQgMCA1LjUgMi4yNCA1LjUgNWgtM2wtMS0xLTEgMWgtMyIvPjxwYXRoIGQ9Ik01Ljg5IDkuNzFjLTIuMTUgMi4xNS0yLjMgNS40Ny0uMzUgNy40M2w0LjI0LTQuMjUuNy0uNy43MS0uNzEgMi4xMi0yLjEyYy0xLjk1LTEuOTYtNS4yNy0xLjgtNy40Mi4zNXoiLz48cGF0aCBkPSJNMTEgMTUuNWMuNSAyLjUtLjE3IDQuNS0xIDYuNWg0YzItNS41LS41LTEyLTEtMTQiLz48L3N2Zz4=",
+    id: 0,
+    name: "beach",
+    description: "This Property is close to the Beach.",
+    title: "Beach",
+    imageUrl:
+      "https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg",
   },
   {
-    name: "Swiming pool",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXdhdmVzIj48cGF0aCBkPSJNMiA2Yy42LjUgMS4yIDEgMi41IDFDNyA3IDcgNSA5LjUgNWMyLjYgMCAyLjQgMiA1IDIgMi41IDAgMi41LTIgNS0yIDEuMyAwIDEuOS41IDIuNSAxIi8+PHBhdGggZD0iTTIgMTJjLjYuNSAxLjIgMSAyLjUgMSAyLjUgMCAyLjUtMiA1LTIgMi42IDAgMi40IDIgNSAyIDIuNSAwIDIuNS0yIDUtMiAxLjMgMCAxLjkuNSAyLjUgMSIvPjxwYXRoIGQ9Ik0yIDE4Yy42LjUgMS4yIDEgMi41IDEgMi41IDAgMi41LTIgNS0yIDIuNiAwIDIuNCAyIDUgMiAyLjUgMCAyLjUtMiA1LTIgMS4zIDAgMS45LjUgMi41IDEiLz48L3N2Zz4=",
+    id: 1,
+    name: "trending",
+    description: "This is a Property which is trending.",
+    title: "Trending",
+    imageUrl:
+      "https://a0.muscache.com/pictures/3726d94b-534a-42b8-bca0-a0304d912260.jpg",
   },
   {
-    name: "Church",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNodXJjaCI+PHBhdGggZD0ibTE4IDcgNCAydjExYTIgMiAwIDAgMS0yIDJINGEyIDIgMCAwIDEtMi0yVjlsNC0yIi8+PHBhdGggZD0iTTE0IDIydi00YTIgMiAwIDAgMC0yLTJ2MGEyIDIgMCAwIDAtMiAydjQiLz48cGF0aCBkPSJNMTggMjJWNWwtNi0zLTYgM3YxNyIvPjxwYXRoIGQ9Ik0xMiA3djUiLz48cGF0aCBkPSJNMTAgOWg0Ii8+PC9zdmc+",
+    id: 2,
+    name: "beachfront",
+    description: "This is a Property is close to the beachfront",
+    title: "Beachfront",
+    imageUrl:
+      "https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg",
   },
   {
-    name: "Big Building",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNodXJjaCI+PHBhdGggZD0ibTE4IDcgNCAydjExYTIgMiAwIDAgMS0yIDJINGEyIDIgMCAwIDEtMi0yVjlsNC0yIi8+PHBhdGggZD0iTTE0IDIydi00YTIgMiAwIDAgMC0yLTJ2MGEyIDIgMCAwIDAtMiAydjQiLz48cGF0aCBkPSJNMTggMjJWNWwtNi0zLTYgM3YxNyIvPjxwYXRoIGQ9Ik0xMiA3djUiLz48cGF0aCBkPSJNMTAgOWg0Ii8+PC9zdmc+",
+    id: 3,
+    name: "erathhome",
+    description: "This Property is considerd a Earth Home",
+    title: "Earth Home",
+    imageUrl:
+      "https://a0.muscache.com/pictures/d7445031-62c4-46d0-91c3-4f29f9790f7a.jpg",
   },
   {
-    name: "Amazing View",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWdyaWQtMngyIj48cmVjdCB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHg9IjMiIHk9IjMiIHJ4PSIyIi8+PHBhdGggZD0iTTMgMTJoMTgiLz48cGF0aCBkPSJNMTIgM3YxOCIvPjwvc3ZnPg==",
+    id: 4,
+    name: "luxe",
+    description: "This Property is considerd Luxorious",
+    title: "Luxe",
+    imageUrl:
+      "https://a0.muscache.com/pictures/c8e2ed05-c666-47b6-99fc-4cb6edcde6b4.jpg",
   },
   {
-    name: "Trending",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZsYW1lIj48cGF0aCBkPSJNOC41IDE0LjVBMi41IDIuNSAwIDAgMCAxMSAxMmMwLTEuMzgtLjUtMi0xLTMtMS4wNzItMi4xNDMtLjIyNC00LjA1NCAyLTYgLjUgMi41IDIgNC45IDQgNi41IDIgMS42IDMgMy41IDMgNS41YTcgNyAwIDEgMS0xNCAwYzAtMS4xNTMuNDMzLTIuMjk0IDEtM2EyLjUgMi41IDAgMCAwIDIuNSAyLjV6Ii8+PC9zdmc+",
+    id: 5,
+    name: "amazingView",
+    description: "This property has an amazing View",
+    title: "Amazing View",
+    imageUrl:
+      "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
   },
   {
-    name: "Internet",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJvdXRlciI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjgiIHg9IjIiIHk9IjE0IiByeD0iMiIvPjxwYXRoIGQ9Ik02LjAxIDE4SDYiLz48cGF0aCBkPSJNMTAuMDEgMThIMTAiLz48cGF0aCBkPSJNMTUgMTB2NCIvPjxwYXRoIGQ9Ik0xNy44NCA3LjE3YTQgNCAwIDAgMC01LjY2IDAiLz48cGF0aCBkPSJNMjAuNjYgNC4zNGE4IDggMCAwIDAtMTEuMzEgMCIvPjwvc3ZnPg==",
+    id: 6,
+    name: "design",
+    description: "This property puts a big focus on design ",
+    title: "Design",
+    imageUrl:
+      "https://a0.muscache.com/pictures/50861fca-582c-4bcc-89d3-857fb7ca6528.jpg",
   },
   {
-    name: "Air conditioner",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXJvdXRlciI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjgiIHg9IjIiIHk9IjE0IiByeD0iMiIvPjxwYXRoIGQ9Ik02LjAxIDE4SDYiLz48cGF0aCBkPSJNMTAuMDEgMThIMTAiLz48cGF0aCBkPSJNMTUgMTB2NCIvPjxwYXRoIGQ9Ik0xNy44NCA3LjE3YTQgNCAwIDAgMC01LjY2IDAiLz48cGF0aCBkPSJNMjAuNjYgNC4zNGE4IDggMCAwIDAtMTEuMzEgMCIvPjwvc3ZnPg==",
+    id: 7,
+    name: "pool",
+    description: "This property has an amazing Pool",
+    title: "Pool",
+    imageUrl:
+      "https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg",
   },
   {
-    name: "Tea /Coffee",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNvZmZlZSI+PHBhdGggZD0iTTE3IDhoMWE0IDQgMCAxIDEgMCA4aC0xIi8+PHBhdGggZD0iTTMgOGgxNHY5YTQgNCAwIDAgMS00IDRIN2E0IDQgMCAwIDEtNC00WiIvPjxsaW5lIHgxPSI2IiB4Mj0iNiIgeTE9IjIiIHkyPSI0Ii8+PGxpbmUgeDE9IjEwIiB4Mj0iMTAiIHkxPSIyIiB5Mj0iNCIvPjxsaW5lIHgxPSIxNCIgeDI9IjE0IiB5MT0iMiIgeTI9IjQiLz48L3N2Zz4=",
+    id: 8,
+    name: "tiny",
+    description: "This property is considered a tiny home",
+    title: "Tiny Home",
+    imageUrl:
+      "https://a0.muscache.com/pictures/3271df99-f071-4ecf-9128-eb2d2b1f50f0.jpg",
   },
   {
-    name: "TV",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXR2Ij48cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHg9IjIiIHk9IjciIHJ4PSIyIiByeT0iMiIvPjxwb2x5bGluZSBwb2ludHM9IjE3IDIgMTIgNyA3IDIiLz48L3N2Zz4=",
+    id: 9,
+    name: "historic",
+    description: "This Property is considered historic",
+    title: "Historic Home",
+    imageUrl:
+      "https://a0.muscache.com/pictures/33dd714a-7b4a-4654-aaf0-f58ea887a688.jpg",
   },
   {
-    name: "Basket ball",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWRyaWJiYmxlIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwYXRoIGQ9Ik0xOS4xMyA1LjA5QzE1LjIyIDkuMTQgMTAgMTAuNDQgMi4yNSAxMC45NCIvPjxwYXRoIGQ9Ik0yMS43NSAxMi44NGMtNi42Mi0xLjQxLTEyLjE0IDEtMTYuMzggNi4zMiIvPjxwYXRoIGQ9Ik04LjU2IDIuNzVjNC4zNyA2IDYgOS40MiA4IDE3LjcyIi8+PC9zdmc+",
+    id: 10,
+    name: "countryside",
+    description: "This Property is located on the countryside",
+    title: "Countryside",
+    imageUrl:
+      "https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg",
   },
   {
-    name: "Wine/drink",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXdpbmUiPjxwYXRoIGQ9Ik04IDIyaDgiLz48cGF0aCBkPSJNNyAxMGgxMCIvPjxwYXRoIGQ9Ik0xMiAxNXY3Ii8+PHBhdGggZD0iTTEyIDE1YTUgNSAwIDAgMCA1LTVjMC0yLS41LTQtMi04SDljLTEuNSA0LTIgNi0yIDhhNSA1IDAgMCAwIDUgNVoiLz48L3N2Zz4=",
+    id: 11,
+    name: "omg",
+    description: "This Property has a wow factor",
+    title: "WOW!",
+    imageUrl:
+      "https://a0.muscache.com/pictures/c5a4f6fc-c92c-4ae8-87dd-57f1ff1b89a6.jpg",
   },
   {
-    name: "Room",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJlZC1kb3VibGUiPjxwYXRoIGQ9Ik0yIDIwdi04YTIgMiAwIDAgMSAyLTJoMTZhMiAyIDAgMCAxIDIgMnY4Ii8+PHBhdGggZD0iTTQgMTBWNmEyIDIgMCAwIDEgMi0yaDEyYTIgMiAwIDAgMSAyIDJ2NCIvPjxwYXRoIGQ9Ik0xMiA0djYiLz48cGF0aCBkPSJNMiAxOGgyMCIvPjwvc3ZnPg==",
-  },
-  {
-    name: "With Sofa",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFybWNoYWlyIj48cGF0aCBkPSJNMTkgOVY2YTIgMiAwIDAgMC0yLTJIN2EyIDIgMCAwIDAtMiAydjMiLz48cGF0aCBkPSJNMyAxMXY1YTIgMiAwIDAgMCAyIDJoMTRhMiAyIDAgMCAwIDItMnYtNWEyIDIgMCAwIDAtNCAwdjJIN3YtMmEyIDIgMCAwIDAtNCAwWiIvPjxwYXRoIGQ9Ik01IDE4djIiLz48cGF0aCBkPSJNMTkgMTh2MiIvPjwvc3ZnPg==",
-  },
-  {
-    name: "Mountains",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLW1vdW50YWluIj48cGF0aCBkPSJtOCAzIDQgOCA1LTUgNSAxNUgyTDggM3oiLz48L3N2Zz4=",
-  },
-  {
-    name: "Security",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWZpbmdlcnByaW50Ij48cGF0aCBkPSJNMiAxMkMyIDYuNSA2LjUgMiAxMiAyYTEwIDEwIDAgMCAxIDggNCIvPjxwYXRoIGQ9Ik01IDE5LjVDNS41IDE4IDYgMTUgNiAxMmMwLS43LjEyLTEuMzcuMzQtMiIvPjxwYXRoIGQ9Ik0xNy4yOSAyMS4wMmMuMTItLjYuNDMtMi4zLjUtMy4wMiIvPjxwYXRoIGQ9Ik0xMiAxMGEyIDIgMCAwIDAtMiAyYzAgMS4wMi0uMSAyLjUxLS4yNiA0Ii8+PHBhdGggZD0iTTguNjUgMjJjLjIxLS42Ni40NS0xLjMyLjU3LTIiLz48cGF0aCBkPSJNMTQgMTMuMTJjMCAyLjM4IDAgNi4zOC0xIDguODgiLz48cGF0aCBkPSJNMiAxNmguMDEiLz48cGF0aCBkPSJNMjEuOCAxNmMuMi0yIC4xMzEtNS4zNTQgMC02Ii8+PHBhdGggZD0iTTkgNi44YTYgNiAwIDAgMSA5IDUuMmMwIC40NyAwIDEuMTctLjAyIDIiLz48L3N2Zz4=",
-  },
-  {
-    name: "Bike",
-    icon: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWJpa2UiPjxjaXJjbGUgY3g9IjE4LjUiIGN5PSIxNy41IiByPSIzLjUiLz48Y2lyY2xlIGN4PSI1LjUiIGN5PSIxNy41IiByPSIzLjUiLz48Y2lyY2xlIGN4PSIxNSIgY3k9IjUiIHI9IjEiLz48cGF0aCBkPSJNMTIgMTcuNVYxNGwtMy0zIDQtMyAyIDNoMiIvPjwvc3ZnPg==",
+    id: 12,
+    name: "surfing",
+    description: "This Property is located near to a surfing spot",
+    title: "Surfing",
+    imageUrl:
+      "https://a0.muscache.com/pictures/957f8022-dfd7-426c-99fd-77ed792f6d7a.jpg",
   },
 ];

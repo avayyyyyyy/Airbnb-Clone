@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
@@ -18,8 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "../ui/label";
 
 const Login = () => {
-  // console.log(open);
-
+  const [open, setOpen] = useState(false);
   const [body, setBody] = useState({
     email: "",
     password: "",
@@ -42,13 +39,13 @@ const Login = () => {
   }
 
   return (
-    <AlertDialog>
+    <AlertDialog open={open} onOpenChange={() => setOpen(!open)}>
       <AlertDialogTrigger asChild>
         <div>Login</div>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogTitle>
-          <div className="text-2xl text-left flex items-center justify-between ">
+          <div className="flex items-center justify-between text-left text-2xl ">
             Login
             <AlertDialogCancel>
               <X className="cursor-pointer" />
@@ -66,7 +63,7 @@ const Login = () => {
             id="email"
             autoComplete="none"
             onChange={(e) => setBody({ ...body, email: e.target.value })}
-            className="outline p-2 rounded-lg outline-zinc-200"
+            className="rounded-lg p-2 outline outline-zinc-200"
           />
           <Label htmlFor="email">Password:</Label>
           <Input
@@ -74,32 +71,22 @@ const Login = () => {
             name="Password"
             id="Password"
             onChange={(e) => setBody({ ...body, password: e.target.value })}
-            className="outline p-2 rounded-lg outline-zinc-200"
+            className="rounded-lg p-2 outline outline-zinc-200"
           />
-          <Button type="submit" className="w-full mt-3">
+          <Button type="submit" className="mt-3 w-full">
             Login
           </Button>
         </form>
         <div className="m-auto">OR </div>
-        <div className="flex flex-col text-center w-full ">
+        <div className="flex w-full flex-col text-center ">
           <div className="flex flex-col gap-2">
-            {/* <Button variant={"outline"} className="p-2 border rounded-lg">
-              <Image
-                className="w-5 mr-2"
-                src={"/images/google.png"}
-                alt=""
-                width={2}
-                height={2}
-              />{" "}
-              Continue with Google
-            </Button> */}
             <Button
               variant={"outline"}
               onClick={() => signIn("github")}
-              className="p-2 border rounded-lg"
+              className="rounded-lg border p-2"
             >
               <Image
-                className="w-5 mr-2"
+                className="mr-2 w-5"
                 src={"/images/github.png"}
                 alt=""
                 width={2}
@@ -107,6 +94,12 @@ const Login = () => {
               />{" "}
               Continue with GitHub
             </Button>
+          </div>
+          <div className="text-zinc-700 mt-2 text-xs">
+            New to Airbnb?{" "}
+            <span className="hover:cursor-pointer hover:underline">
+              Register
+            </span>
           </div>
         </div>
       </AlertDialogContent>
